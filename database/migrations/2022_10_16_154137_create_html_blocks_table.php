@@ -18,7 +18,9 @@ class CreateHtmlBlocksTable extends Migration
             $table->unsignedBigInteger('article_id');
             $table->unsignedBigInteger('author_id');
             $table->integer('type');
-            $table->string('content')->nullable();
+            $table->string('content_en')->nullable();
+            $table->string('content_vi')->nullable();
+            $table->string('content_jp')->nullable();
             $table->integer('sort')->nullable();
             $table->timestamps();
             $table->softDeletes();

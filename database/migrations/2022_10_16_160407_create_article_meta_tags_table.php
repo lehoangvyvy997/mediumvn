@@ -16,10 +16,12 @@ class CreateArticleMetaTagsTable extends Migration
         Schema::create('article_meta_tags', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('article_id');
+            $table->enum('locale', ['en', 'vi', 'jp'])->default('en');
             $table->string('name');
             $table->string('content');
             $table->integer('sort')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -17,7 +17,9 @@ class CreateArticlesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('author_id');
             $table->unsignedBigInteger('blog_id')->nullable();
-            $table->string('title')->nullable();
+            $table->string('title_en')->nullable();
+            $table->string('title_vi')->nullable();
+            $table->string('title_jp')->nullable();
             $table->string('slug')->unique()->nullable();
             $table->string('thumbnail')->nullable();
             $table->tinyInteger('is_draft')->default(1);
